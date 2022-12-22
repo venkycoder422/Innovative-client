@@ -1,16 +1,17 @@
 import React, { useState } from 'react'
 import { Link, useParams } from 'react-router-dom';
 import styled from 'styled-components'
+import { useNavigate } from 'react-router-dom';
 import { FaRegEdit } from 'react-icons/fa';
 import { RiDeleteBinLine } from 'react-icons/ri';
+import { NotificationContainer, NotificationManager } from 'react-notifications';
 import axios from 'axios';
 const { htmlToText } = require('html-to-text');
-
 
 export const SinglePost = () => {
     const [blog, setBlog] = useState({});
     const { id } = useParams();
-    console.log(id);
+    const navigate = useNavigate();
     React.useEffect(() => {
         axios({
             method: 'get',
@@ -19,7 +20,11 @@ export const SinglePost = () => {
             .then((res) => setBlog(res.data))
             .catch((err) => console.log(err))
     }, [id]);
-    console.log("Blog", blog);
+    const DeleteBlog=()=>{
+        axios.delete(`https://innovation-blog.onrender.com/delete/${id}`)
+        .then(() =>NotificationManager.error("Deleted blog !!"))
+        .then(()=>navigate('/blogs'))
+    }
     return (
 
         <Container>
@@ -37,7 +42,7 @@ export const SinglePost = () => {
 
                         <div className='Icons'>
                             {/* <FaRegEdit /> */}
-                            <Link to={`/delete/${blog._id}`}><RiDeleteBinLine className='svg2' /></Link>
+                            <RiDeleteBinLine className='svg2' onClick={DeleteBlog}/>
                         </div>
 
 
