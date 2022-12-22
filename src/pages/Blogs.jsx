@@ -27,7 +27,7 @@ export const Blogs = () => {
               <span className="postTitle">
                 {item.title}
               </span>
-              <span className="">
+              <span className="author">
                 Author: {item.author}
               </span>
               <hr />
@@ -59,7 +59,6 @@ const Container = styled.div`
 `;
 const Post = styled.div`
 width:400px;
-
   img{
   width:100%;
   height:280px;
@@ -71,18 +70,20 @@ width:400px;
 const PostInfo = styled.div`
 display:flex;
 flex-direction:column;
-
-
 .postTitle{
   font-family:'Jesefin Sans',sans-serif;
   font-size:24px;
   font-weight:700;
+  color:black;
+}
+.author{
+  color:black;
 }
 .postData{
   font-family:'Lora',serif;
   font-style:italic;
   font-size:13px;
-  color:#999;
+  color:black;
 }
 .postDesc{
 font-family: 'Varela Round',dans-serif;
@@ -95,6 +96,11 @@ text-overflow:ellipsis;
 display:-webkit-box;
 -webkit-line-clamp:4;
 -webkit-box-orient:vertical;
+  font-size: 16px;
+    line-height: 32px;
+    font-weight: 400;
+    color: #36344D;
+    letter-spacing: .3px;
 }
 
 `

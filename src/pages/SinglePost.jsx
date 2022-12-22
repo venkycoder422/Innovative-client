@@ -42,8 +42,10 @@ export const SinglePost = () => {
 
 
                     </div>
-
+                  
                     <p className='postDesc'>{htmlToText(blog.body)}</p>
+               
+                    
                 </PostInfo>
             </Post>
 
@@ -58,6 +60,7 @@ const Container = styled.div`
 position:relative;
   display:grid;
   grid-template-columns:repeat(1,1fr);
+  grid-templete-rows:auto;
   margin:1% 5% 0% 5%;
   justify-items:center;
   background-color:#d1d1d1;
@@ -77,6 +80,7 @@ width:80%;
 const PostInfo = styled.div`
 display:flex;
 flex-direction:column;
+
 .post-icons{
     display:flex;
     justify-content:space-between;
@@ -94,7 +98,7 @@ flex-direction:column;
   font-family:'Lora',serif;
   font-style:italic;
   font-size:13px;
-  color:#999;
+  color:black;
 }
 .Icons{
     padding: 0.5rem;
@@ -111,15 +115,12 @@ flex-direction:column;
 
 .postDesc{
 font-family: 'Varela Round',dans-serif;
-font-size:14px;
-color:#444;
-line-height:24px;
 margin-top:15px;
-overflow:hidden;
-text-overflow:ellipsis;
-display:-webkit-box;
--webkit-line-clamp:4;
--webkit-box-orient:vertical;
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 400;
+    color: #36344D;
+    letter-spacing: .3px;
 }
 
 `

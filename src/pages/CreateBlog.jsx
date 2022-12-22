@@ -6,7 +6,6 @@ import { Card, CardBody, Form, Input, Label, Button, Container } from "reactstra
 import JoditEditor from "jodit-react";
 import { NotificationContainer, NotificationManager } from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
-import htmlToFormattedText from "html-to-formatted-text";
 import { BackgroundImage } from '../components/BackgroundImg';
 import { getAuth } from '@firebase/auth';
 import axios from 'axios';
