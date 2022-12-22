@@ -16,6 +16,7 @@
 - Create blog using text editor
 - Blogs page
 - Individual blog page
+- Notification alert
 
 # Innovative Blog
 
