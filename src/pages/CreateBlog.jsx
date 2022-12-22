@@ -28,52 +28,6 @@ export const CreateBlog = () => {
         author: ''
     })
 
-
-    // getAuth()
-    //     .getUserByEmail(email)
-    //     .then((userRecord) => {
-    //         // See the UserRecord reference doc for the contents of userRecord.
-    //         console.log(`Successfully fetched user data: ${userRecord.toJSON()}`);
-    //     })
-    //     .catch((error) => {
-    //         console.log('Error fetching user data:', error);
-    //     });
-
-        
-
-    // const GetUsers = () => {
-
-    //     axios({
-    //         method: 'get',
-    //         url: '',
-
-    //     })
-    //         .then((res) => setUser(res.data))
-
-    //         .catch((err) => console.log(err));
-    //     }
-
-
-
-    // const config={
-    //     placeholder:"Start typing...",
-
-    // }
-
-    // useEffect(
-    //     () => {
-
-    //         setUser(getCurrentUserDetail())
-    //         loadAllCategories().then((data) => {
-    //             console.log(data)
-    //             setCategories(data)
-    //         }).catch(error => {
-    //             console.log(error)
-    //         })
-    //     },
-    //     []
-    // )
-
     //field changed function
     const fieldChanged = (event) => {
         // console.log(event)
@@ -121,7 +75,7 @@ export const CreateBlog = () => {
         console.log(post);
         axios({
             method:'post',
-            url:'http://localhost:8080/create',
+            url:'https://innovation-blog.onrender.com/create',
             data:post
         }).then((response) => {
             console.log(response);
@@ -142,12 +96,6 @@ export const CreateBlog = () => {
         setPost({ ...post, image: event.target.value })
 
     }
-    // console.log("HI", post);
-    // const html = (post.content);
-    // const text = htmlToText(post.content);
-    // // const text = htmlToFormattedText('<img src="https://opportunities.masaischool.com/images/lead_banner.svg" />');
-    // console.log(text);
-
     return (
         <>
             <BackgroundImage />
@@ -172,14 +120,7 @@ export const CreateBlog = () => {
 
                             <div className="my-3">
                                 <Label for="content" >Post Content</Label>
-                                {/* <Input
-                        type="textarea"
-                        id="content"
-                        placeholder="Enter here"
-                        className="rounded-0"
-                        style={{ height: '300px' }}
-                    /> */}
-
+                            
                                 <JoditEditor
                                     ref={editor}
                                     value={post.content}
@@ -195,49 +136,11 @@ export const CreateBlog = () => {
                                 <Input id="image" type="text" onChange={handleFileChange} />
                             </div>
 
-                            {/* <div className="my-3">
-                                <Label for="category" >Post Category</Label>
-                                <Input
-                                    type="select"
-                                    id="category"
-                                    placeholder="Enter here"
-                                    className="rounded-0"
-                                    name="categoryId"
-                                    onChange={fieldChanged}
-                                    defaultValue={0}
-
-                                >
-
-                                     <option disabled value={0} >--Select category--</option>
-
-                                    {
-
-                                        categories.map((category) => (
-                                            <option value={category.categoryId} key={category.categoryId}>
-                                                {category.categoryTitle}
-                                            </option>
-                                        ))
-
-                                    }
-
-
-
-                                </Input>
-                            </div> 
-
-                                */}
-
-
-
                             <Container className="text-center">
                                 <Button type="submit" className="rounded-0" color="primary">Create Post</Button>
                                 <Button className="rounded-0 ms-2" color="danger">Reset Content</Button>
                             </Container>
-
-
                         </Form>
-
-
                     </CardBody>
 
                     <NotificationContainer />

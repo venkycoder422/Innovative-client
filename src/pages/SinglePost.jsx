@@ -14,7 +14,7 @@ export const SinglePost = () => {
     React.useEffect(() => {
         axios({
             method: 'get',
-            url: `http://localhost:8080/blog/${id}`,
+            url: `https://innovation-blog.onrender.com/${id}`,
         })
             .then((res) => setBlog(res.data))
             .catch((err) => console.log(err))

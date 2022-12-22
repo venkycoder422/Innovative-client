@@ -8,7 +8,7 @@ export const Blogs = () => {
   useEffect(() => {
     axios({
       method: 'get',
-      url: 'http://localhost:8080/blogs',
+      url: 'https://innovation-blog.onrender.com/blogs',
 
     })
       .then((res) => setBlog(res.data.blogs))
