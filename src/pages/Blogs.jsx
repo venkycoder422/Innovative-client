@@ -50,12 +50,16 @@ const Container = styled.div`
   grid-template-columns:repeat(3,1fr);
   margin:5% 5% 0% 5%;
   justify-items:center;
+  background-color:#d1d1d1;
+  padding:5% 0%;
+  border-radius:0.5rem;
   a{
     text-decoration:none;
   }
 `;
 const Post = styled.div`
 width:400px;
+
   img{
   width:100%;
   height:280px;

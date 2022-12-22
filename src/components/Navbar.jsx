@@ -14,6 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { Link } from 'react-router-dom';
 import styled from "styled-components";
+import logo from '../assests/logo.jpg';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
@@ -54,7 +55,7 @@ function Navbar() {
         <AppBar position="sticky">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+                    <IMG src={logo} className="logo" />
                     <Typography
                         variant="h6"
                         noWrap
@@ -70,7 +71,7 @@ function Navbar() {
                             textDecoration: 'none',
                         }}
                     >
-                        LOGO
+                        BLOG
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -193,4 +194,11 @@ const List = styled.li`
     
 
 `
+
+const IMG = styled.img`
+      width:1.8rem;
+      height:1.8rem;
+      border-radius:0.5rem;
+      margin-right:0.4rem;
+`;
 export default Navbar;

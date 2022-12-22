@@ -10,6 +10,7 @@ import htmlToFormattedText from "html-to-formatted-text";
 import { BackgroundImage } from '../components/BackgroundImg';
 import { getAuth } from '@firebase/auth';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 // const { convert } = require('html-to-text');
 import {onAuthStateChanged} from '@firebase/auth';
 import { firebaseAuth } from '../utils/firebase-config';
@@ -27,7 +28,7 @@ export const CreateBlog = () => {
         image: '',
         author: ''
     })
-
+const navigate = useNavigate();
     //field changed function
     const fieldChanged = (event) => {
         // console.log(event)
@@ -80,6 +81,7 @@ export const CreateBlog = () => {
         }).then((response) => {
             console.log(response);
             NotificationManager.success("Posted !!");
+            navigate('/')
           })
           .catch(function (error) {
             // handle error
@@ -132,7 +134,7 @@ export const CreateBlog = () => {
                             {/* file field  */}
 
                             <div className="mt-3">
-                                <Label for="image">Enter Post banner</Label>
+                                <Label for="image">Paste Image URL</Label>
                                 <Input id="image" type="text" onChange={handleFileChange} />
                             </div>
 

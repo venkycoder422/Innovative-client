@@ -14,7 +14,7 @@ export const SinglePost = () => {
     React.useEffect(() => {
         axios({
             method: 'get',
-            url: `https://innovation-blog.onrender.com/${id}`,
+            url: `https://innovation-blog.onrender.com/blog/${id}`,
         })
             .then((res) => setBlog(res.data))
             .catch((err) => console.log(err))
@@ -58,8 +58,11 @@ const Container = styled.div`
 position:relative;
   display:grid;
   grid-template-columns:repeat(1,1fr);
-  margin:5% 5% 0% 5%;
+  margin:1% 5% 0% 5%;
   justify-items:center;
+  background-color:#d1d1d1;
+  padding:5% 0%;
+  border-radius:0.5rem;
 `;
 const Post = styled.div`
 width:80%;
